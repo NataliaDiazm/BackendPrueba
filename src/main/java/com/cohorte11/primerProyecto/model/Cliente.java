@@ -25,12 +25,13 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Orden> ordenes = new ArrayList<>();
 
-    public Cliente() {}
+    public Cliente() {
+        this.rol = RolCliente.CLIENTE;
+    }
 
-    public Cliente(String nombre, String email, RolCliente rol, List<Orden> ordenes) {
+    public Cliente(String nombre, String email,  List<Orden> ordenes) {
         this.nombre = nombre;
         this.email = email;
-        this.rol = rol;
         this.ordenes = ordenes;
     }
 

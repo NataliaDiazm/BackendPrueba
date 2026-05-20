@@ -1,6 +1,8 @@
 package com.cohorte11.primerProyecto.service;
 
 
+import com.cohorte11.primerProyecto.DTO.OrdenRequestDTO;
+import com.cohorte11.primerProyecto.DTO.OrdenResponseDTO;
 import com.cohorte11.primerProyecto.model.Cliente;
 import com.cohorte11.primerProyecto.model.Orden;
 import com.cohorte11.primerProyecto.repository.ClienteRepository;
@@ -9,6 +11,57 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+
+//@Service
+//public class OrdenService {
+//
+//    private final OrdenRepository ordenRepository;
+//    private final ClienteRepository clienteRepository;
+//
+//    @Autowired
+//    public OrdenService(OrdenRepository ordenRepository,
+//                        ClienteRepository clienteRepository) {
+//        this.ordenRepository = ordenRepository;
+//        this.clienteRepository = clienteRepository;
+//    }
+//
+//    public List<OrdenResponseDTO> findAll() {
+//        return ordenRepository.findAll()
+//                .stream()
+//                .map(OrdenResponseDTO::desde)
+//                .collect(Collectors.toList());
+//    }
+//
+//    public OrdenResponseDTO findById(Long id) {
+//        Orden orden = ordenRepository.findById(id).orElse(null);
+//        if (orden == null) return null;
+//        return OrdenResponseDTO.desde(orden);
+//    }
+//
+//    public OrdenResponseDTO save(OrdenRequestDTO dto) {
+//        Cliente cliente = clienteRepository.findById(dto.getClienteId()).orElse(null);
+//        Orden orden = new Orden(dto.getFecha(), dto.getEstado(), cliente);
+//        return OrdenResponseDTO.desde(ordenRepository.save(orden));
+//    }
+//
+//    public OrdenResponseDTO update(Long id, OrdenRequestDTO dto) {
+//        Orden existente = ordenRepository.findById(id).orElse(null);
+//        if (existente == null) return null;
+//        Cliente cliente = clienteRepository.findById(dto.getClienteId()).orElse(null);
+//        existente.setFecha(dto.getFecha());
+//        existente.setEstado(dto.getEstado());
+//        existente.setCliente(cliente);
+//        return OrdenResponseDTO.desde(ordenRepository.save(existente));
+//    }
+//
+//    public void delete(Long id) {
+//        ordenRepository.deleteById(id);
+//    }
+//}
+
+
 
 @Service
 public class OrdenService {

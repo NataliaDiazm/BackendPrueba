@@ -1,6 +1,5 @@
 package com.cohorte11.primerProyecto.controller;
 
-import com.cohorte11.primerProyecto.DTO.ProductoRequestDTO;
 import com.cohorte11.primerProyecto.model.Producto;
 import com.cohorte11.primerProyecto.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
