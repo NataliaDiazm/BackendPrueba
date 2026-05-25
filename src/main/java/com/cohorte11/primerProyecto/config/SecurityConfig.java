@@ -31,13 +31,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                // CSRF desactivado: CSRF protege formularios HTML con sesiones.
-                // En APIs REST con JWT no hay sesiones ni formularios, no aplica.
-                .csrf(csrf -> csrf.disable())
-
-                // STATELESS: no se guardan sesiones en el servidor.
-                // Cada solicitud es independiente y se autentica con su propio token.
-                // Esto es fundamental para APIs REST escalables.
+    .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.configure(http))
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
