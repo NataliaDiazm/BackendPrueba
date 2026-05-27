@@ -34,7 +34,7 @@ public class ClienteService {
         if (existente == null) return null;
         existente.setNombre(datos.getNombre());
         existente.setEmail(datos.getEmail());
-        existente.setRol(datos.getRol());
+        //existente.setRol(datos.getRol());
         return clienteRepository.save(existente);
     }
 
