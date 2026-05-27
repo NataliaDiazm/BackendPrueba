@@ -30,8 +30,8 @@ public class CorsConfig {
         config.addAllowedMethod("OPTIONS");
 
         // Permite todos los headers, incluyendo Authorization: Bearer <token>
-        //config.addAllowedHeader("*");
-        config.addAllowedOrigin("https://nataliadiazm.github.io/PruebaFrontend/");
+        config.addAllowedHeader("*");
+        config.addAllowedOrigin("https://nataliadiazm.github.io");
 
         // Permite que el navegador lea el header Authorization en las respuestas.
         config.setAllowCredentials(false);
